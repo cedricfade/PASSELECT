@@ -59,22 +59,26 @@ Route::get('/dashboard',[OrganisateurController::class,'dashboard'])->name('dash
    Route::get('/evenements/{id}/{titre}',[EventOrganisateurController::class,'view'])->name('event-organisateur-view');
 
    // PARTICIPANT
-
    Route::get('/participant/inscription',[ParticipantController::class,'participantInscription'])->name('participant-inscription');
    Route::post('/participant/new',[ParticipantController::class,'participantAction'])->name('participant-new');
+Route::middleware(['auth',])->group(function () {
+
    Route::get('/tableau-de-bord',[ParticipantController::class,'dashboard'])->name('participant-dashboard');
    Route::get('/panier',[ParticipantController::class,'panier'])->name('participant-panier');
    Route::get('/panier/{id}',[ParticipantController::class,'delete'])->name('panier-delete');
 
 
+});
    Route::get('/participant/login',[ParticipantController::class,'participantLogin'])->name('participant-login');
    Route::post('/participant/validate',[ParticipantController::class,'participantLoginAction'])->name('participant-login_action');
    Route::get('/logout',[ParticipantController::class,'logout'])->name('logout');
 
 
    // CART
-   Route::POST('/cart/{id}', [CartController::class, 'cartAdd'])->name('cart.add');
+  Route::middleware(['auth'])->group(function () {
+    Route::POST('/cart/{id}', [CartController::class, 'cartAdd'])->name('cart.add');
    Route::get('/checkout',[CartController::class,'checkout'])->name('checkout');
    Route::post('/payment',[CartController::class,'payment'])->name('payment');
+  });
    // Route::get('/pannier/show', [CartController::class, 'cartAdd'])->name('cart.add');
    // Route::POST('/cart', [CartController::class, 'store'])->name('pannier.store');
