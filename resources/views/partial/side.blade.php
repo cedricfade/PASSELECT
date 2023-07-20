@@ -19,12 +19,12 @@
                   <li><a href="{{ route('event.ajout') }}">Ajouter évènement</a></li>
                 </ul>
               </li>
-              <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="layout"></i><span>Tickets</span></a>
+              {{-- <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="layout"></i><span>Tickets</span></a>
                 <ul class="nav-submenu menu-content">
                   <li><a href="box-layout.html">Participants</a></li>
 
                 </ul>
-              </li>
+              </li> --}}
 
              @if (Auth()->guard('organisateur')->user()->formule->libelle = "basic")
 

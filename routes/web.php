@@ -43,6 +43,7 @@ Route::get('/dashboard',[OrganisateurController::class,'dashboard'])->name('dash
 
 
  // EVENT
+<<<<<<< HEAD
     Route::get('/event',[EventController::class,'all'])->name('event.all');
     Route::get('/event/{id}',[EventController::class,'view'])->name('event.view');
     Route::get('ajout',[EventController::class,'ajout'])->name('event.ajout');
@@ -51,6 +52,18 @@ Route::get('/dashboard',[OrganisateurController::class,'dashboard'])->name('dash
 
     // PREMIUM
     Route::get('/premium',[PremiumController::class,'all'])->name('premium.all');
+=======
+    //   Route::middleware(['auth'])->group(function () {
+        Route::get('/event',[EventController::class,'all'])->name('event.all');
+        Route::get('/event/{id}',[EventController::class,'view'])->name('event.view');
+        Route::get('ajout',[EventController::class,'ajout'])->name('event.ajout');
+        Route::post('modif',[EventController::class,'eventModif'])->name('event.modif');
+        Route::post('/event/validate',[EventController::class,'EventValidate'])->name('event.validate');
+    //   });
+
+    // PREMIUM
+    Route::get('/premium',[PremiumController::class,'all'])->middleware('auth')->name('premium.all');
+>>>>>>> 13fd46a81d4618cff366a1bd6a20b33930102f13
 
 
    //  EVENT ORGANISATEUR
@@ -59,6 +72,7 @@ Route::get('/dashboard',[OrganisateurController::class,'dashboard'])->name('dash
    Route::get('/evenements/{id}/{titre}',[EventOrganisateurController::class,'view'])->name('event-organisateur-view');
 
    // PARTICIPANT
+<<<<<<< HEAD
    Route::get('/participant/inscription',[ParticipantController::class,'participantInscription'])->name('participant-inscription');
    Route::post('/participant/new',[ParticipantController::class,'participantAction'])->name('participant-new');
 Route::middleware(['auth',])->group(function () {
@@ -69,16 +83,39 @@ Route::middleware(['auth',])->group(function () {
 
 
 });
+=======
+
+
+   Route::get('/participant/inscription',[ParticipantController::class,'participantInscription'])->name('participant-inscription');
+   Route::post('/participant/new',[ParticipantController::class,'participantAction'])->name('participant-new');
+
+   Route::get('/tableau-de-bord',[ParticipantController::class,'dashboard'])->name('participant-dashboard');
+   Route::middleware(['auth'])->group(function () {
+
+    Route::get('/panier',[ParticipantController::class,'panier'])->name('participant-panier');
+    Route::get('/panier/{id}',[ParticipantController::class,'delete'])->name('panier-delete');
+
+
+   });
+>>>>>>> 13fd46a81d4618cff366a1bd6a20b33930102f13
    Route::get('/participant/login',[ParticipantController::class,'participantLogin'])->name('participant-login');
    Route::post('/participant/validate',[ParticipantController::class,'participantLoginAction'])->name('participant-login_action');
    Route::get('/logout',[ParticipantController::class,'logout'])->name('logout');
 
 
    // CART
+<<<<<<< HEAD
   Route::middleware(['auth'])->group(function () {
     Route::POST('/cart/{id}', [CartController::class, 'cartAdd'])->name('cart.add');
    Route::get('/checkout',[CartController::class,'checkout'])->name('checkout');
    Route::post('/payment',[CartController::class,'payment'])->name('payment');
   });
+=======
+    // Route::middleware(['auth'])->group(function () {
+        Route::POST('/cart/{id}', [CartController::class, 'cartAdd'])->name('cart.add');
+        Route::get('/checkout',[CartController::class,'checkout'])->name('checkout');
+        Route::post('/payment',[CartController::class,'payment'])->name('payment');
+    // });
+>>>>>>> 13fd46a81d4618cff366a1bd6a20b33930102f13
    // Route::get('/pannier/show', [CartController::class, 'cartAdd'])->name('cart.add');
    // Route::POST('/cart', [CartController::class, 'store'])->name('pannier.store');

@@ -15,10 +15,10 @@
       @include('partial.side')
       <!-- Page Sidebar Ends-->
          <!-- Plugins css start-->
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/vendors/photoswipe.css') }}">
+
     <!-- Plugins css Ends-->
     <!-- Bootstrap css-->
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/vendors/bootstrap.css') }}">
+
     <!-- App css-->
 
         <!-- Container-fluid Ends-->

@@ -26,5 +26,6 @@
  <link rel="stylesheet" href="{{asset('assets1/sweetalert2/sweetalert2.css') }}">
  <script src="{{ asset('assets1/sweetalert2/sweetalert2.js') }}"></script>
 
- <link rel="stylesheet" type="text/css" href="../assets1/css/vendors/datatables.css">
+ <link rel="stylesheet" type="text/css" href="{{ asset('/assets1/css/vendors/datatables.css') }}">
  
+ <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/vendors/bootstrap.css') }}">

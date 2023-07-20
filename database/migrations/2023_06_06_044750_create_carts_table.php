@@ -17,7 +17,10 @@ return new class extends Migration
             $table->foreignId('event_id')->constrained();
             $table->double('status');
             $table->text('prix');
+<<<<<<< HEAD
             $table->text('operateur');
+=======
+>>>>>>> 13fd46a81d4618cff366a1bd6a20b33930102f13
             $table->timestamps();
         });
     }

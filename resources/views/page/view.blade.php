@@ -294,10 +294,94 @@
 
 
                                 @elseif (!auth()->guard('participant')->user() OR !auth()->guard('organisateur')->user())
+<<<<<<< HEAD
                                 <button type="button"  data-toggle="modal" data-target="" class="buy" style="cursor: pointer">
                                     Connectez-vous
                                      </button>
 
+=======
+                                <button type="button"  data-toggle="modal" data-target="#connection" class="buy" style="cursor: pointer">
+                                    Connectez-vous
+                                     </button>
+
+                                     <div class="modal fade" id="connection" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                          <div class="modal-content">
+                                            <div class="modal-header">
+                                              <h5 class="modal-title" id="staticBackdropLabel" style="color: #000;text-align: center; align-items: center">Vous êtes?</h5>
+
+                                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                              </button>
+
+
+
+                                            </div>
+                                            <style>
+                                                .participant{
+                                                background: #083c41;
+                                                padding: 20px
+                                                }
+                                                .participant a{
+
+                                                }
+                                                .participant:hover{
+                                                    background: #072427
+                                                }
+                                                .organisateur{
+                                                    background: #080941;
+                                                    padding: 20px
+                                                }
+
+                                                .organisateur:hover{
+                                                    background: #05051e
+                                                }
+                                            </style>
+
+                                            <div class="modal-body p-0 m-0">
+                                                <div class="connexion">
+                                                    <div class="container-fluid">
+                                                        <div class="row">
+
+                                                            <div class="col-xl-6 p-0 m-0">
+
+
+                                                            <a href="{{route('participant-login')}}">
+                                                                <div class="participant" >
+                                                                <h1 style="text-transform: uppercase; color:#fff; font-style: italic;font-family: cursive; font-size: 1.8em">Participant</h1>
+
+                                                            </div>
+                                                        </div>
+                                                            </a>
+
+                                                            <div class="col-xl-6 p-0 m-0">
+
+
+                                                            <a href="{{route('organisateur_login')}}">
+                                                            <div class=" organisateur" style="">
+                                                                <h1 style="text-transform: uppercase; color:#fff; font-style: italic;font-family: cursive; font-size: 1.8em">Organisateur</h1>
+
+
+
+                                                            </div>
+                                                            </a>
+                                                            </div>
+
+
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+
+                                              </div>
+                                          </div>
+                                        </div>
+                                     </div>
+
+
+
+>>>>>>> 13fd46a81d4618cff366a1bd6a20b33930102f13
 
 
                                @endif

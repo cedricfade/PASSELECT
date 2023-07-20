@@ -250,9 +250,13 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
 
 
 
+<<<<<<< HEAD
 @php
      echo  $total;
 @endphp
+=======
+
+>>>>>>> 13fd46a81d4618cff366a1bd6a20b33930102f13
 
 
 

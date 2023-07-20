@@ -29,7 +29,11 @@ class ParticipantController extends Controller
         $this->validate($request,[
             'nom'=>'required',
             'prenom'=>'required',
+<<<<<<< HEAD
             'email'=>'email|unique:participants,email',
+=======
+            'email'=>'email|unique:participants',
+>>>>>>> 13fd46a81d4618cff366a1bd6a20b33930102f13
             'contact'=>'required',
             'password'=>'required|min:8',
             // 'type_user_id'=>'required',
