@@ -43,11 +43,7 @@ font-size: 45px;
 padding-top: 40PX;
 
 user-select: none;
-<<<<<<< HEAD
-} 
-=======
 }
->>>>>>> 13fd46a81d4618cff366a1bd6a20b33930102f13
 
 </style>
 
@@ -56,11 +52,6 @@ user-select: none;
 
 
 <body class="hidden-bar-wrapper">
-<<<<<<< HEAD
- 
-=======
-
->>>>>>> 13fd46a81d4618cff366a1bd6a20b33930102f13
   <div class="back">
 
     @include('page.menu')
@@ -72,27 +63,15 @@ user-select: none;
   <br><br>
   <div class="container">
 
-<<<<<<< HEAD
-    
-=======
-
->>>>>>> 13fd46a81d4618cff366a1bd6a20b33930102f13
     <div class="row g-3 back-inscription">
       <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12" style="z-index: 1">
         <div class="form col-xl-9 col-lg-12 col-md-12 col-12" style="background: #fff;">
          @if (session('id_erreur'))
          <div style="background-color: rgb(160, 63, 63); color:#fff" class="col-12 text-center p-1 animate__animated animate__shakeX">{{ session('id_erreur') }}</div>
-<<<<<<< HEAD
-             
-         @endif
-         <h5 class="text-center"><span style="border-top:1px dashed; padding:4px 15px; border-bottom:1px dashed; padding:4px 15px; border-left:1px dashed; padding:4px 15px; ">Inscription</span><span style="background-color: rgb(73, 15, 85); color:#fff; padding:5px 15px">Participant</span></h5>
-       
-=======
 
          @endif
          <h5 class="text-center"><span style="border-top:1px dashed; padding:4px 15px; border-bottom:1px dashed; padding:4px 15px; border-left:1px dashed; padding:4px 15px; ">Inscription</span><span style="background-color: rgb(73, 15, 85); color:#fff; padding:5px 15px">Participant</span></h5>
 
->>>>>>> 13fd46a81d4618cff366a1bd6a20b33930102f13
           <br>
 
           <form action="{{ route('participant-new') }}" method="POST" style="">
@@ -122,13 +101,9 @@ user-select: none;
               </div>
               <div class="form-group col-12">
                 <label for="" style="">Contact</label>
-<<<<<<< HEAD
-                <input type="text"  name="contact" class="form-control" value="{{ old('contact') }}">
-=======
                 <input type="text"  name="contact" class="form-control  @error('contact')
                 is-invalid
                 @enderror" value="{{ old('contact') }}">
->>>>>>> 13fd46a81d4618cff366a1bd6a20b33930102f13
                 @error('contact')
                 <span class="text-danger" style="font-size:12px;">{{ $message }}</span>
                 @enderror
@@ -155,30 +130,6 @@ user-select: none;
                 <p style="font-weight: 500;font-size:15px;text-align: center; color:#161515">Déjà Participant? <a class="ms-2" href="{{ route('participant-login') }}" style="color: rgb(46, 12, 139);font-weight: bold; text-decoration: underline">Connexion   </a></p>
               </div>
             </div>
-<<<<<<< HEAD
-    
-           
-          
-          
-          </form>
-        </div>
-      </div>
-  
-      
-      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 text-left col-lg-6" style="color:#fff;">
-        {{-- <h3 style="font-size: 4.4em;font-family: 'Amaranth', sans-serif; line-height: 0.8em; 
-        background: -webkit-linear-gradient(#ffffff, #4a7fb1);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;">Deviens Organisateur</h3> --}}
-      
- 
-             <div class="col-12" style="">
-              <div id="container" style="margin-bottom:; position: relative; left; ">
-         
-                <div style="background: red !important">
-                <span id="text1" style="color:#"></span>
-              
-=======
 
 
 
@@ -201,7 +152,6 @@ user-select: none;
                 <div style="background: red !important">
                 <span id="text1" style="color:#"></span>
 
->>>>>>> 13fd46a81d4618cff366a1bd6a20b33930102f13
                 </div>
                 <span id="text2" style="color:#"></span>
                 <svg id="filters" style="">
@@ -216,22 +166,6 @@ user-select: none;
               </svg>
             </div>
             <div class="img-event" style=" box-shadow: 18px 20px 1px rgba(146, 7, 238, 0.979);height: 27em;border:15px solid #fff; border-radius: 5px; margin-top: -20px; margin-left: -90px; background-repeat: no-repeat; position: relative;;    background-image: url({{ asset('assets/7482.png') }});">
-<<<<<<< HEAD
-       
-            </div>
-              
-      </div>
-      
-
-
-
-   
-        
-
-
-      </div>
-  
-=======
 
             </div>
 
@@ -246,7 +180,6 @@ user-select: none;
 
       </div>
 
->>>>>>> 13fd46a81d4618cff366a1bd6a20b33930102f13
     </div>
   </div>
 

@@ -14,13 +14,11 @@ return new class extends Migration
         Schema::create('carts', function (Blueprint $table) {
             $table->id();
             $table->foreignId('participant_id')->constrained();
-            $table->foreignId('event_id')->constrained();
+            $table->foreignId('ticket_id')->constrained();
+            $table->string('operateur');
+            $table->string('numero_debit');
             $table->double('status');
-            $table->text('prix');
-<<<<<<< HEAD
-            $table->text('operateur');
-=======
->>>>>>> 13fd46a81d4618cff366a1bd6a20b33930102f13
+            $table->string('prix');
             $table->timestamps();
         });
     }

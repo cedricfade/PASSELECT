@@ -127,7 +127,7 @@
                               <div class="news-block_one-tag" style="background: #6e0972;color:#f7f2f2; box-shadow:2px 2px 1px rgb(54, 13, 92)">{{ $event->categorie->libelle }}</div>
                               <div class="news-block_one-image">
                                   <a href="{{ route('event-organisateur-view',['id'=>$event->id , 'titre'=>Str::slug($event->titre)]) }}"><img src="{{ Storage::url($event->image) }}" alt="" /></a>
-                                  <img src="{{ Storage::url($event->image) }}" alt="" />
+                                  <img src="{{ asset('') }}" alt="" />
                               </div>
                               <div class="news-block_one-content">
                                   <div class="news-block_one-date" style="color: #f3f3f3; font-weight: bold"> <span style="">{{ $event->heure_event }}</span></div>
@@ -135,14 +135,9 @@
                                       <li style="color: #470303; font-weight: bold"><span class="icon fa-regular fa-calendar fa-fw"></span>{{ $event->date_event->format('d/m/y') }}</li>
                                       {{-- <li><span class="icon fa-solid fa-comments fa-fw"></span>(03) Comments</li> --}}
                                   </ul>
-<<<<<<< HEAD
                                   
                                   <h5 class="news-block_one-title text-xl-1" style="font-size: 14px; font-weight: bold; margin-bottom: 5px"><a href="{{ route('event-organisateur-view',['id'=>$event->id , 'titre'=>Str::slug($event->titre)]) }}">{{ Str::limit($event->titre, 50) }}</a></h5>
                                   <a class="" href="{{ route('event-organisateur-view',['id'=>$event->id , 'titre'=>Str::slug($event->titre)]) }}"></a>
-=======
-                                  <h5 class="news-block_one-title text-xl-1" style="font-size: 14px; font-weight: bold; margin-bottom: 5px"><a href="{{ route('event-organisateur-view',['id'=>$event->id , 'titre'=>Str::slug($event->titre)]) }}">{{ Str::limit($event->titre, 50) }}</a></h5>
-                                  <a class="" href="{{ route('event-organisateur-view',['id'=>$event->id , 'titre'=>Str::slug($event->titre)]) }}">
->>>>>>> 13fd46a81d4618cff366a1bd6a20b33930102f13
 
                                       @if (($event->prix_vip == null & $event->prix_vvip == null & $event->prix_public == null))
 

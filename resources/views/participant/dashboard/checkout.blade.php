@@ -111,6 +111,8 @@
             <div class="col-md-5 ">
                 {{-- <h3>Checkout</h3> --}}
                 <br>
+
+                
                 @php
                 $total = 0;
             @endphp
@@ -251,23 +253,23 @@
                 <div class="btn-orange">
                     <img src="{{asset('image paiement/OrangeMoney.jpg')}}" alt="" style="height: 20px;position: relative;top:-4.5em;right:1.5em; float: right;">
 
-                     <a href="" class="btn bg-success text-light col-12" style="float: ;border-radius: 1px !important">CONTINUER ORANGE</a>
+                     <a href="{{ route('paiement') }}" class="btn bg-success text-light col-12" style="float: ;border-radius: 1px !important">CONTINUER</a>
                 </div>
 
                 <div class="btn-mtn">
                     <img src="{{asset('image paiement/mtn.jfif')}}" alt="" style="height: 20px;position: relative;top:-4.5em;right:1.5em; float: right;">
-                     <a href="" class="btn bg-success text-light col-12 " style="float: ;border-radius: 1px !important">CONTINUER</a>
+                     <a href="{{ route('paiement') }}" class="btn bg-success text-light col-12 " style="float: ;border-radius: 1px !important">CONTINUER</a>
                 </div>
 
                 <div class="btn-moov">
                     <img src="{{asset('image paiement/moov.png')}}" alt="" style="height: 20px;position: relative;top:-4.5em;right:1.5em; float: right;"
                     >
-                    <a href="" class="btn bg-success text-light col-12  " style="float: ;border-radius: 1px !important">CONTINUER</a>
+                    <a href="{{ route('paiement') }}" class="btn bg-success text-light col-12  " style="float: ;border-radius: 1px !important">CONTINUER</a>
                </div>
 
                <div class="btn-wave">
                 <img src="{{asset('image paiement/wave.png')}}" alt=""style="height: 20px;position: relative;top:-4.5em;right:1.5em; float: right;">
-                <a href="" class="btn bg-success text-light col-12 " style="float: ;border-radius: 1px !important">CONTINUER</a>
+                <a href="{{ route('paiement') }}" class="btn bg-success text-light col-12 " style="float: ;border-radius: 1px !important">CONTINUER</a>
            </div>
 
 

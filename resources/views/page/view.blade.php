@@ -294,12 +294,6 @@
 
 
                                 @elseif (!auth()->guard('participant')->user() OR !auth()->guard('organisateur')->user())
-<<<<<<< HEAD
-                                <button type="button"  data-toggle="modal" data-target="" class="buy" style="cursor: pointer">
-                                    Connectez-vous
-                                     </button>
-
-=======
                                 <button type="button"  data-toggle="modal" data-target="#connection" class="buy" style="cursor: pointer">
                                     Connectez-vous
                                      </button>
@@ -381,7 +375,6 @@
 
 
 
->>>>>>> 13fd46a81d4618cff366a1bd6a20b33930102f13
 
 
                                @endif

@@ -148,6 +148,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                             @include('participant.dashboard.tab')
 
                         </div>
+              
 
 
 
@@ -247,28 +248,34 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                                     $total;
                                     echo number_format($total);
                                 @endphp FCFA</span> </h4>
+                                          
 
 
 
-<<<<<<< HEAD
-@php
-     echo  $total;
-@endphp
-=======
-
->>>>>>> 13fd46a81d4618cff366a1bd6a20b33930102f13
 
 
 
                                 <br><br>
 
-                                {{$tickets = null ? 'rien' : ' '}}
+                               
+                               
+                                
 
 
 
+                              @if ($tickets->count() == null)
+                              <a href="{{ route('checkout') }}"  class="btn btn-pay disabled" style="" >Valider ma commande <i class="las la-angle-double-right"></i></a>
+                              @else
+                              <a href="{{ route('checkout') }}"  class="btn btn-pay" style="" >Valider ma commande <i class="las la-angle-double-right"></i></a>
+                              @endif
+                         
+                     
+                          
 
-
-                                <a href="{{ route('checkout') }}" class="btn btn-pay" style="">Valider ma commande <i class="las la-angle-double-right"></i></a>
+                  
+                      
+                                 
+                     
 
 
 

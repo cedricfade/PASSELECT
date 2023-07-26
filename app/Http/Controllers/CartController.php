@@ -1,8 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use Cart;
+
+use App\Models\Cart;
 use App\Models\event;
+use App\Models\participant;
 use App\Models\ticket;
 
 use Illuminate\Http\Request;
@@ -94,67 +96,51 @@ public function checkout(){
 }
 
 
-public function payment(Request $request){
+public function payment(){
+
+    $participant = Auth()->guard('participant')->user()->id;
+
+    $tickets = ticket::where('participant_id',$participant)->get();
+ 
 
 
 
-
-
-    return view('participant.dashboard.payment');
+    return view('participant.dashboard.payment', compact('tickets'));
 }
+ public function paymentTraitement(Request $request){
+
+    $participant = auth()->guard('participant')->user()->id;
+    $tickets= ticket::where('participant_id',$participant)->get();
+    
+    $arr = array($tickets);
+    $t = implode(' ',$arr);
+   
+    
+
+    
+    $payment  = new Cart();
+    $payment->participant_id = $participant;
+    $payment->ticket_id = $t;
+    $payment->operateur = $request->operateur;
+    $payment->numero_debit = $request->numero_debit;
+    $payment->status = 1;
+    $payment->prix = $request->prix;
+
+    // dd($payment);
+    $payment->save();
+
+    // return redirect()->route('paiement.success')->with('sucessPaimement','Votre paiement a été prise en compte');
+    
+
+ }
+
+ public function paymentSuccess(){
+
+    return view('participant.dashboard.payementSuccess');
+ }
 
 
-    //  public function cartAdd($id){
-    //     $te = 'quantite';
 
-
-    //     $product = event::findOrFail($id);
-
-    //     $cart = session()->get('cart',[]);
-
-    //     if (isset($cart[$id])) {
-    //         $cart[$id][$te];
-    //     }
-    //     else{
-    //     $cart[$id] = [
-    //    'id' => $product->id,
-    //    'titre' => $product->titre,
-    //    'prix_vp' => $product->prix_vp,
-    //    'prix_vvp' => $product->prix_vvp,
-    //    'prix_public' => $product->prix_public,
-    //    'quantity'=>1,
-    //    'price'=> $product->prix_public,
-
-    //         ];
-    //     }
-    //     session()->put('cart',$cart);
-    //     // dd($product);
-    //     // return redirect()->back()->with('success','Ticket ajouté au panier');
-
-
-
-    //  }
-
-public function store(Request $request)
-{
-
-    $product = event::findOrFail($request->id);
-
-
-    Cart::add([
-        'id' => $product->id,
-        'name' => $product->titre,
-        'price'=> $product->prix_public,
-        'attributes' => [],
-        'quantity'=>1,
-        'associatedModel' => $product,
-      ]
-    );
-    // dd($product);
-    return redirect()->back()->with('cart', 'ok');
-
-
-}
 
     /**
      * Display the specified resource.
