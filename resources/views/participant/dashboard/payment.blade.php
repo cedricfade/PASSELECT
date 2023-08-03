@@ -111,9 +111,9 @@
         $total = 0;
     @endphp
 
-        <div class="container mx-auto col-xl-2 col-9 col-md-6 col-sm-6 col-lg-6  " style="margin-bottom: 5em;">
-          
-         
+        <div class="container mx-auto col-xl-3 col-9 col-md-4 col-sm-6 col-lg-6  " style="margin-bottom: 5em;">
+
+
             <form action="{{ route('paiement.traitement') }}" method="post" class="form-pay">
                 @csrf
                 <h3 class="text-center">Paiement</h3>
@@ -134,49 +134,49 @@
 
                  <div class="form-group">
                     <input type="text" class="form-control" placeholder="Numéro à débiter" name="numero_debit" minlength="10" maxlength="10" required>
-                 
+
                  </div>
                  @foreach ($tickets as $ticket)
-                   
-                 
+
+
                  @php
                      $total += $ticket->event->prix_public * $ticket->prix_public + $ticket->event->prix_vip * $ticket->prix_vip + $ticket->event->prix_vvip * $ticket->prix_vvip;
-                     
-                    
+
+
                  @endphp
-                
-                 
+
+
 
                     @endforeach
-                
+
 
                  <div class="form-group">
                     <p>Montant à payer: <b>    @php
                         echo number_format($total);
                       @endphp FCFA</b></p>
-                    
+
                  </div>
 
-                  
+
                     <input type="text" value="  {{ $total }}" name="prix" hidden>
                  <div class="form-group">
                     <input type="submit" class="btn btn-success col-12" value="Payer" style="cursor: pointer">
                  </div>
-             
-                 
-                 
+
+
+
 
                 </form>
 
 
                 </div>
-                
 
 
-      
 
 
-        
+
+
+
         </div>
 
 

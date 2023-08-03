@@ -101,7 +101,7 @@ public function payment(){
     $participant = Auth()->guard('participant')->user()->id;
 
     $tickets = ticket::where('participant_id',$participant)->get();
- 
+
 
 
 
@@ -111,26 +111,32 @@ public function payment(){
 
     $participant = auth()->guard('participant')->user()->id;
     $tickets= ticket::where('participant_id',$participant)->get();
-    
-    $arr = array($tickets);
-    $t = implode(' ',$arr);
-   
-    
 
-    
+
+    foreach ($tickets as $ticket) {
+        // $st = $ticket->id;
+
+    }
+
+    // $arr = array($st);
+    // $t = implode(' ',$arr);
+
+
+
+
     $payment  = new Cart();
     $payment->participant_id = $participant;
-    $payment->ticket_id = $t;
+    $payment->ticket_id = $ticket;
     $payment->operateur = $request->operateur;
     $payment->numero_debit = $request->numero_debit;
     $payment->status = 1;
     $payment->prix = $request->prix;
 
-    // dd($payment);
-    $payment->save();
+    dd($payment);
+    // $payment->save();
 
     // return redirect()->route('paiement.success')->with('sucessPaimement','Votre paiement a été prise en compte');
-    
+
 
  }
 

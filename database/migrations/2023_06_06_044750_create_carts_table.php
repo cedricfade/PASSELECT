@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('carts', function (Blueprint $table) {
             $table->id();
             $table->foreignId('participant_id')->constrained();
-            $table->foreignId('ticket_id')->constrained();
+            $table->foreignId('ticket_id',50)->constrained();
             $table->string('operateur');
             $table->string('numero_debit');
             $table->double('status');
