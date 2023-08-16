@@ -16,10 +16,13 @@ return new class extends Migration
             $table->foreignId('organisateur_id')->constrained();
             $table->foreignId('categorie_id')->constrained();
             $table->string('titre');
-            $table->text('description');
+            $table->text('description')->nullable();
             $table->integer('prix_vip')->nullable();
             $table->integer('prix_vvip')->nullable();
             $table->integer('prix_public')->nullable();
+            $table->string('date_event');
+            $table->string('lieu_event');
+            $table->string('heure_event');
             $table->string('image');
             $table->timestamps();
         });
