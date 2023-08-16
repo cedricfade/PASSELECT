@@ -49,7 +49,7 @@ user-select: none;
 
 <body class="hidden-bar-wrapper">
  
-  <div class="back">
+  <div class="mon-banner">
 
     @include('page.menu')
 
@@ -68,7 +68,9 @@ user-select: none;
          <div style="background-color: rgb(160, 63, 63); color:#fff" class="col-12 text-center p-1 animate__animated animate__shakeX">{{ session('id_erreur') }}</div>
              
          @endif
-         <h5 class="text-center"><span style="border-top:1px dashed; padding:4px 15px; border-bottom:1px dashed; padding:4px 15px; border-left:1px dashed; padding:4px 15px; ">Inscription</span><span style="background-color: rgb(73, 15, 85); color:#fff; padding:5px 15px">Organisateur</span></h5>
+         <h5 class="text-center d-md-block d-sm-block d-lg-block d-xl-block d-none" ><span style="border-top:1px dashed; padding:4px 15px; border-bottom:1px dashed; padding:4px 15px; border-left:1px dashed; padding:4px 15px; ">Inscription</span><span style="background-color: rgb(73, 15, 85); color:#fff; padding:5px 15px">Organisateur</span></h5>
+         <h5 class="text-center  d-md-none d-sm-none d-lg-none d-xl-none d-block col-1" style="font-size: 12px"><span style="border-top:1px dashed; padding:4px 15px; border-bottom:1px dashed; padding:4px 15px; border-left:1px dashed; padding:4px 15px; ">Inscription</span><span style="background-color: rgb(73, 15, 85); color:#fff; padding:5px 15px">Organisateur</span></h5>
+
        
           <br>
 

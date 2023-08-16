@@ -183,7 +183,7 @@
 						</div> --}}
 
 						<!-- Post Widget -->
-						<div class="sidebar-widget post-widget">
+						{{-- <div class="sidebar-widget post-widget">
 							<div class="widget-content">
 								<h4 class="sidebar-widget_title">Evènements récents</h4>
 
@@ -204,7 +204,7 @@
 								</div>
 
 							</div>
-						</div>
+						</div> --}}
 {{--
 						<!-- Time Widget -->
 						<div class="sidebar-widget popular-tags">

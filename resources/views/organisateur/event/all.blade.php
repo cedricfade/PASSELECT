@@ -70,7 +70,8 @@
                 <div class="blog-wrraper"><a href="{{ route('event.view',['id'=>$event->id]) }}"><img class="img-fluid top-radius-blog img-modif" src="{{ Storage::url($event->image) }}" alt=""></a></div>
                 <br>
                 <div class="blog-details-second">
-                  <div class="blog-post-date col-12"><span class="blg-month" style="width: 40% !important">{{ $event->date_event->format('d/m/y') }}</span><span class="blg-date">{{ $event->heure_event }}</span></div><a href="blog-single.html">
+              
+                  <div class="blog-post-date col-12"><span class="blg-month" style="width: 40% !important">{{ $event->date_event->format('d/m/y')->translatedFormat('d/m/y') }}</span><span class="blg-date">{{ $event->heure_event }}</span></div><a href="blog-single.html">
                     <h6 class="blog-bottom-details" style="font-size: 13px">{{ $event->titre }}</h6></a>
 
                   <div class="detail-footer" style="margin:0px; padding:0px;font-size:12px; display:flex;list-style: none">

@@ -72,7 +72,7 @@ label{
 </style>
   </head>
   <body>
-    <div class="back">
+    <div class="mon-banner">
 
       @include('page.menu')
 
@@ -94,15 +94,16 @@ label{
     <div class="container">
       
       <div class="row">
-        <div class="col-xl-12">
-          <div class="form col-xl-4 col-lg-6 col-md-6 col-10">
+        <div class="col-xl-12 col-12">
+          <div class="form col-xl-4 col-lg-6 col-md-6 col-12 col-sm-10">
            @if (session('id_erreur'))
            <div style="background-color: rgb(160, 63, 63); color:#fff;" class="col-12 text-center mb-2 animate__animated animate__shakeX">{{ session('id_erreur') }}</div>
                
            @endif
            
           
-            <h5 class="text-center"><span style="border-top:1px dashed; padding:4px 15px; border-bottom:1px dashed; padding:4px 15px; border-left:1px dashed; padding:4px 15px; ">Connexion</span><span style="background-color: rgb(73, 15, 85); color:#fff; padding:5px 15px">Organisateur</span></h5>
+           <h5 class="text-center d-md-block d-sm-block d-lg-block d-xl-block d-none" ><span style="border-top:1px dashed; padding:4px 15px; border-bottom:1px dashed; padding:4px 15px; border-left:1px dashed; padding:4px 15px; ">Connexion</span><span style="background-color: rgb(73, 15, 85); color:#fff; padding:5px 15px">Organisateur</span></h5>
+           <h5 class="text-center  d-md-none d-sm-none d-lg-none d-xl-none d-block col-1" style="font-size: 12px"><span style="border-top:1px dashed; padding:4px 15px; border-bottom:1px dashed; padding:4px 15px; border-left:1px dashed; padding:4px 15px; ">Connexion</span><span style="background-color: rgb(73, 15, 85); color:#fff; padding:5px 15px">Organisateur</span></h5>
 
             
             

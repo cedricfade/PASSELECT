@@ -9,7 +9,11 @@
 </head>
 
 
-
+<style>
+    .ms-slider{
+        background: linear-gradient(to right, #12096e,#1d59bd);
+    }
+</style>
 
 
 <body class="hidden-bar-wrapper">
@@ -23,46 +27,53 @@
 
        @include('page.menu')
 
-
-
+{{-- 
+       <div class="slider-three_pattern-one" style="background-image:url(assets/images/main-slider/pattern-6.png);"></div>
+       <div class="slider-three_image-layer" style="background-image:url(assets/images/main-slider/image-4.jpg);"></div> --}}
 
         <!-- Slider Three -->
         <section class="slider-three">
             <div class="main-slider-carousel owl-carousel owl-theme" style="height: ">
 
                 <!-- Slide 01 -->
-                <div class="slider-three_slide">
-                    <div class="slider-three_pattern-one" style="background-image:url(assets/images/main-slider/pattern-6.png)"></div>
-                    <div class="slider-three_image-layer" style="background-image:url(assets/images/main-slider/image-4.jpg)"></div>
+                <div class="slider-three_slide ms-slider pt-n5">
+                    {{-- <div class="slider-three_pattern-one" style="background-image:url(assets/images/main-slider/pattern-6.png);"></div>
+                    <div class="slider-three_image-layer" style="background-image:url(assets/images/main-slider/image-4.jpg);"></div> --}}
                     <div class="auto-container">
-                        <div class="row clearfix">
+                        <div class="row clearfix pt-n5">
+
+
+                            
 
                             <!-- Content Column -->
-                            <div class="slider-three_content col-lg-7 col-md-12 col-sm-12">
+                            <div class="slider-three_content col-xl-8 col-lg-12 col-md-10" style="margin-top: -5em">
                                 <div class="slider-three_content-inner">
-                                    <div class="slider-three_title">Worldwide conference on</div>
-                                    <h2 class="slider-three_heading">Late Crazes in <br> Teaching Learning</h2>
-                                    <div class="slider-three_location">Hilton Nashville Airport Hotel, Nashville, TN</div>
+                                    {{-- <div class="slider-three_title">Worldwide conference on</div> --}}
+                                    <h2 class="slider-three_heading col-xl-12 col-12" style="font-size: ">Reservez maintenant <br> vos tickets</h2>
+                                    <div class="slider-three_location">Partagez un meilleur moment avec vos proches</div>
                                     <!-- Time Countdown -->
-                                    <div class="slider-three_timer">
-                                        <div class="time-countdown clearfix" data-countdown="2025/12/1"></div>
-                                    </div>
-                                    <div class="slider-three_button">
+                                    {{-- <div class="slider-three_timer">
+                                        <div class="time-countdown clearfix" data-countdown="2023/8/19"></div>
+                                    </div> --}}
+                                    {{-- <div class="slider-three_button">
                                         <a href="register.html" class="theme-btn btn-style-three">
                                             <span class="btn-wrap">
-                                                <span class="text-one">Registration now</span>
+                                                <span class="text-one">Acheter</span>
                                                 <span class="text-two">Registration now</span>
                                             </span>
                                         </a>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
 
-                            <div class="slider-three_image-column col-lg-5 col-md-12 col-sm-12">
-                                <div class="slider-three_image">
-                                    <img src="assets/images/main-slider/image-3.png" alt="" />
+                            
+                            <div class="slider-three_image-column col-lg-5 col-md-12 col-sm-12 col-xl-4" style="height: ">
+                                <div class="slider-three_image" style="background-image: url({{ asset('pre.png') }});height:500px; background-repeat:no-repeat; margin-top:4em">
+                  
                                 </div>
                             </div>
+
+                       
 
                         </div>
                     </div>
@@ -70,7 +81,7 @@
                 <!-- End Slide 01 -->
 
                 <!-- Slide 02 -->
-                <div class="slider-three_slide" style="height:">
+                {{-- <div class="slider-three_slide" style="height:">
                     <div class="slider-three_pattern-one" style="background-image:url(assets/images/main-slider/pattern-6.png)"></div>
                     <div class="slider-three_image-layer" style="background-image:url(assets/images/main-slider/image-4.jpg)"></div>
                     <div class="auto-container">
@@ -105,7 +116,7 @@
 
                         </div>
                     </div>
-                </div>
+                </div> --}}
                 <!-- End Slide 02 -->
 
 
@@ -121,13 +132,13 @@
 
               		<!-- Leadership One Ship / Style Two -->
                       @foreach ($events as $event)
-                      <div class="news-block_one col-lg-4 col-md-4 col-sm-6 col-xl-4 col-6">
-                          <div class="news-block_one-inner">
+                      <div class="news-block_one col-lg-4 col-md-4 col-sm-6 col-xl-4 col-12">
+                          <div class="news-block_one-inner col-xl-10 col-12">
                               <!-- Post Info -->
                               <div class="news-block_one-tag" style="background: #6e0972;color:#f7f2f2; box-shadow:2px 2px 1px rgb(54, 13, 92)">{{ $event->categorie->libelle }}</div>
                               <div class="news-block_one-image">
                                   <a href="{{ route('event-organisateur-view',['id'=>$event->id , 'titre'=>Str::slug($event->titre)]) }}"><img src="{{ Storage::url($event->image) }}" alt="" /></a>
-                                  <img src="{{ asset('') }}" alt="" />
+                                  <img src="{{ Storage::url($event->image) }}" alt="" style=" " />
                               </div>
                               <div class="news-block_one-content">
                                   <div class="news-block_one-date" style="color: #f3f3f3; font-weight: bold"> <span style="">{{ $event->heure_event }}</span></div>
@@ -179,13 +190,23 @@
 
                       @endforeach
 
-
+            
                 </div>
 
             </div>
         </div>
       </div>
+      
     </div>
+
+
+
+
+
+
+
+
+  
 
         <!-- End Gallery Two -->
 
